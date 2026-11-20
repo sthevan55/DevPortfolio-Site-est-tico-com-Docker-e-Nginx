@@ -3,12 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="canonical" href="https://devportfolio-sthevan.vercel.app/">
+  <script>
+    // Limpa o parametro de rastreamento antes de mostrar a pagina.
+    (function () {
+      try {
+        var url = new URL(window.location.href);
+        if (url.searchParams.get('utm_source') === 'chatgpt.com') {
+          url.searchParams.delete('utm_source');
+          window.history.replaceState(window.history.state, '', url.pathname + url.search + url.hash);
+        }
+      } catch (error) {
+        // A pagina permanece utilizavel em navegadores restritivos.
+      }
+    })();
+  </script>
   <meta name="description" content="DevPortfolio: portfólio acadêmico de Sthevan Vinicius, estudante de Análise e Desenvolvimento de Sistemas. Site estático containerizado com Docker e Nginx.">
   <meta name="theme-color" content="#090e1b">
   <title>DevPortfolio | Sthevan Vinicius</title>
   <link rel="icon" href="assets/imagens/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="css/style.css">
-  <script src="js/script.js" defer></script>
+  <script src="js/script.js?v=20261120" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
