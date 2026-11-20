@@ -2,6 +2,22 @@
 (() => {
   'use strict';
 
+  // Mantem o endereco visivel limpo quando links recebem rastreamento do ChatGPT.
+  try {
+    const currentUrl = new URL(window.location.href);
+    if (currentUrl.searchParams.get('utm_source') === 'chatgpt.com') {
+      currentUrl.searchParams.delete('utm_source');
+      window.history.replaceState(
+        window.history.state,
+        '',
+        currentUrl.pathname + currentUrl.search + currentUrl.hash
+      );
+    }
+  } catch (_) {
+    // Caso o navegador restrinja alteracoes na URL, o site continua funcional.
+  }
+
+
   const root = document.documentElement;
   const themeToggle = document.querySelector('#theme-toggle');
   const menuToggle = document.querySelector('#menu-toggle');
