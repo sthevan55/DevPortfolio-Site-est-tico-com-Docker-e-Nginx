@@ -429,3 +429,12 @@ html[data-theme="light"] .gradient-text { background-image: linear-gradient(105d
   .contact-actions .button { width: 100%; }
   .back-to-top { width: 40px; height: 40px; right: 16px; bottom: 16px; }
 }
+
+/* Acesso direto aos projetos publicados */
+.project-actions { display:flex; align-items:center; gap:12px; margin-top:18px; padding-top:15px; border-top:1px solid var(--line); }
+.project-live { display:inline-flex; align-items:center; justify-content:space-between; flex:1; gap:8px; min-height:42px; padding:10px 12px; border-radius:10px; background:var(--primary); color:#091221; text-decoration:none; font-size:12px; font-weight:800; transition:transform .2s,filter .2s; }
+.project-live:hover, .project-live:focus-visible { filter:brightness(1.1); transform:translateY(-2px); }
+.project-live span { font-size:15px; }
+.project-actions .project-link { width:auto; margin:0; padding:0; border:0; flex-shrink:0; gap:6px; font-size:12px; white-space:nowrap; }
+.project-actions .project-link span { font-size:14px; }
+@media (max-width:440px) { .project-actions { gap:9px; } .project-live { padding:9px 10px; } }
