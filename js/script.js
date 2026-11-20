@@ -1,4 +1,4 @@
-﻿/* DevPortfolio â€” interacoes em JavaScript puro, sem dependencias. */
+﻿/* DevPortfolio — interacoes em JavaScript puro, sem dependencias. */
 (() => {
   'use strict';
 
@@ -39,13 +39,13 @@
   function closeMenu() {
     navigation?.classList.remove('is-open');
     menuToggle?.setAttribute('aria-expanded', 'false');
-    menuToggle?.setAttribute('aria-label', 'Abrir menu de navegaÃ§Ã£o');
+    menuToggle?.setAttribute('aria-label', 'Abrir menu de navegação');
   }
 
   menuToggle?.addEventListener('click', () => {
     const open = navigation.classList.toggle('is-open');
     menuToggle.setAttribute('aria-expanded', String(open));
-    menuToggle.setAttribute('aria-label', open ? 'Fechar menu de navegaÃ§Ã£o' : 'Abrir menu de navegaÃ§Ã£o');
+    menuToggle.setAttribute('aria-label', open ? 'Fechar menu de navegação' : 'Abrir menu de navegação');
   });
 
   navigation?.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeMenu));
@@ -114,27 +114,27 @@
   // Conteudo do modal gerado localmente: os cards nao abrem links ficticios.
   const projectDetails = {
     nexus: {
-      title: 'NEXUS ERP', category: 'SISTEMAS / GESTÃƒO',
-      description: 'Conceito de aplicaÃ§Ã£o para organizaÃ§Ã£o de operaÃ§Ãµes empresariais, com recursos relacionados a estoque, vendas e indicadores de acompanhamento.',
-      highlights: ['Painel de indicadores com foco na leitura rÃ¡pida.', 'OrganizaÃ§Ã£o de produtos e dados operacionais.', 'Estrutura visual de uma aplicaÃ§Ã£o administrativa.'],
+      title: 'NEXUS ERP', category: 'SISTEMAS / GESTÃO',
+      description: 'Conceito de aplicação para organização de operações empresariais, com recursos relacionados a estoque, vendas e indicadores de acompanhamento.',
+      highlights: ['Painel de indicadores com foco na leitura rápida.', 'Organização de produtos e dados operacionais.', 'Estrutura visual de uma aplicação administrativa.'],
       tags: ['React', 'Python', 'Banco de dados']
     },
     studyhub: {
-      title: 'Atlas TADS', category: 'WEB / EDUCAÃ‡ÃƒO',
-      description: 'Ideia de plataforma acadÃªmica dedicada a tornar o processo de estudo mais organizado, com disciplinas, materiais de revisÃ£o e simulados.',
-      highlights: ['SeparaÃ§Ã£o de conteÃºdos por disciplina.', 'NavegaÃ§Ã£o intuitiva e foco em produtividade.', 'Estrutura preparada para diferentes tipos de estudo.'],
+      title: 'Atlas TADS', category: 'WEB / EDUCAÇÃO',
+      description: 'Ideia de plataforma acadêmica dedicada a tornar o processo de estudo mais organizado, com disciplinas, materiais de revisão e simulados.',
+      highlights: ['Separação de conteúdos por disciplina.', 'Navegação intuitiva e foco em produtividade.', 'Estrutura preparada para diferentes tipos de estudo.'],
       tags: ['HTML/CSS', 'JavaScript', 'UI/UX']
     },
     climaview: {
-      title: 'ClimaView', category: 'WEB / VISUALIZAÃ‡ÃƒO',
-      description: 'Projeto de interface meteorolÃ³gica que organiza temperaturas e outros indicadores climÃ¡ticos em um painel de fÃ¡cil compreensÃ£o.',
-      highlights: ['CartÃµes responsivos para visualizar informaÃ§Ãµes.', 'RepresentaÃ§Ã£o grÃ¡fica de tendÃªncias climÃ¡ticas.', 'Interface planejada para desktop e celular.'],
+      title: 'ClimaView', category: 'WEB / VISUALIZAÇÃO',
+      description: 'Projeto de interface meteorológica que organiza temperaturas e outros indicadores climáticos em um painel de fácil compreensão.',
+      highlights: ['Cartões responsivos para visualizar informações.', 'Representação gráfica de tendências climáticas.', 'Interface planejada para desktop e celular.'],
       tags: ['JavaScript', 'Chart.js', 'CSS3']
     },
     financeflow: {
-      title: 'FinanceFlow', category: 'DADOS / FINANÃ‡AS',
-      description: 'Conceito de sistema para acompanhar entradas e saÃ­das financeiras, priorizando a organizaÃ§Ã£o e a visualizaÃ§Ã£o dos dados.',
-      highlights: ['OrganizaÃ§Ã£o dos registros por categoria.', 'VisÃ£o consolidada de gastos e receitas.', 'PainÃ©is para apoiar a anÃ¡lise de informaÃ§Ãµes.'],
+      title: 'FinanceFlow', category: 'DADOS / FINANÇAS',
+      description: 'Conceito de sistema para acompanhar entradas e saídas financeiras, priorizando a organização e a visualização dos dados.',
+      highlights: ['Organização dos registros por categoria.', 'Visão consolidada de gastos e receitas.', 'Painéis para apoiar a análise de informações.'],
       tags: ['JavaScript', 'Python', 'SQL']
     }
   };
@@ -177,9 +177,9 @@
 
   async function copyToClipboard(value) {
     try {
-      if (!navigator.clipboard?.writeText) throw new Error('Clipboard API indisponÃ­vel');
+      if (!navigator.clipboard?.writeText) throw new Error('Clipboard API indisponível');
       await navigator.clipboard.writeText(value);
-      showToast('âœ“ ConteÃºdo copiado para a Ã¡rea de transferÃªncia!');
+      showToast('✓ Conteúdo copiado para a área de transferência!');
     } catch (_) {
       const field = document.createElement('textarea');
       field.value = value;
@@ -190,7 +190,7 @@
       field.select();
       const copied = document.execCommand('copy');
       field.remove();
-      showToast(copied ? 'âœ“ ConteÃºdo copiado para a Ã¡rea de transferÃªncia!' : 'NÃ£o foi possÃ­vel copiar automaticamente.');
+      showToast(copied ? '✓ Conteúdo copiado para a área de transferência!' : 'Não foi possível copiar automaticamente.');
     }
   }
 
@@ -208,4 +208,3 @@
   const year = document.getElementById('current-year');
   if (year) year.textContent = String(new Date().getFullYear());
 })();
-
