@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 290" width="360" height="290" role="img" aria-label="Pessoa trabalhando em notebook">
+  <defs>
+    <linearGradient id="screen" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#1b3678"/><stop offset="1" stop-color="#111b40"/></linearGradient>
+    <linearGradient id="shirt" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#6776ff"/><stop offset="1" stop-color="#7658cf"/></linearGradient>
+    <linearGradient id="desk" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#4655a8"/><stop offset="1" stop-color="#253a7e"/></linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="8"/></filter>
+  </defs>
+  <ellipse cx="177" cy="272" rx="143" ry="12" fill="#141e4f" opacity=".38" filter="url(#shadow)"/>
+  <circle cx="288" cy="81" r="52" fill="#635fea" opacity=".12"/><circle cx="60" cy="184" r="45" fill="#2ac9e7" opacity=".09"/>
+  <path d="M83 231c0-47 33-74 81-74h42c49 0 80 30 80 74v30H83z" fill="url(#shirt)"/>
+  <path d="M112 239c3-27 11-43 22-57m125 54c-2-25-11-42-23-55" stroke="#97a3ff" stroke-width="4" opacity=".48" stroke-linecap="round"/>
+  <path d="M162 160h43v31c0 14-10 24-22 24s-21-10-21-24z" fill="#cb8773"/>
+  <path d="M163 170c5 10 23 16 41 9v-19h-41z" fill="#a96762"/>
+  <ellipse cx="184" cy="112" rx="47" ry="54" fill="#dba18d"/>
+  <path d="M137 119c-6-44 7-71 43-74 39-3 63 27 55 65-7-5-13-17-16-30-16 19-50 24-82 20z" fill="#182149"/>
+  <path d="M144 92c5-30 25-43 55-39 18 2 30 13 36 29-12-10-19-16-35-17-16 15-36 22-56 27z" fill="#222d5a"/>
+  <circle cx="165" cy="116" r="3" fill="#293047"/><circle cx="204" cy="116" r="3" fill="#293047"/>
+  <path d="M175 143c7 6 14 6 21 0" fill="none" stroke="#995c5a" stroke-width="3" stroke-linecap="round"/>
+  <path d="M138 113c-16-7-20 17-5 23m101-23c14-7 18 18 4 23" fill="#d39888"/>
+  <path d="M99 204c-13 5-21 19-21 40h35l26-24-12-21zM256 202c15 5 26 20 29 42h-38l-23-24 12-21z" fill="#6e80ff"/>
+  <path d="M117 236c13-11 29-15 46-14l19 11-15 28H99zM250 236c-16-11-32-15-48-14l-19 11 15 28h67z" fill="#dba18d"/>
+  <rect x="99" y="190" width="173" height="87" rx="8" fill="#102049"/>
+  <rect x="106" y="197" width="159" height="72" rx="4" fill="url(#screen)"/>
+  <path d="M156 233l13-11m-13 11 13 11m33-22 13 11-13 11" fill="none" stroke="#5bdce5" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="m191 217-13 32" stroke="#c4adff" stroke-width="5" stroke-linecap="round"/>
+  <rect x="81" y="273" width="209" height="7" rx="3" fill="url(#desk)"/><rect x="158" y="273" width="53" height="3" rx="2" fill="#8390db"/>
+  <circle cx="59" cy="90" r="17" fill="#142d5b" stroke="#3a65a2" stroke-width="2"/><path d="m55 84-6 6 6 6m8-12 6 6-6 6" stroke="#61dbef" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="264" y="136" width="44" height="29" rx="6" fill="#162954" stroke="#4661a3" stroke-width="2"/><path d="M276 145h20m-20 7h13" stroke="#7d93ff" stroke-width="3" stroke-linecap="round"/>
+  <path d="m286 40 5 9-5 9-5-9z" fill="#7d7bff"/><circle cx="84" cy="158" r="5" fill="#48cee2"/>
+</svg>
