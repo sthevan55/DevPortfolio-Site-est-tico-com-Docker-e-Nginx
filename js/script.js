@@ -149,9 +149,9 @@
     },
     financeflow: {
       title: 'FinanceFlow', category: 'DADOS / FINANÇAS',
-      description: 'Conceito de sistema para acompanhar entradas e saídas financeiras, priorizando a organização e a visualização dos dados.',
-      highlights: ['Organização dos registros por categoria.', 'Visão consolidada de gastos e receitas.', 'Painéis para apoiar a análise de informações.'],
-      tags: ['JavaScript', 'Python', 'SQL']
+      description: 'Sistema web de gestão financeira com receitas e despesas, contas bancárias, cartões de crédito, orçamentos, metas e relatórios. Projeto publicado na Vercel com backend em Flask e banco PostgreSQL.',
+      highlights: ['Controle de lançamentos, contas e cartões.', 'Visão de orçamento, patrimônio e previsões.', 'Metas financeiras, relatórios e conciliação de extratos.'],
+      tags: ['JavaScript', 'Python/Flask', 'PostgreSQL']
     }
   };
 
