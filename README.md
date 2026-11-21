@@ -11,6 +11,13 @@ O **DevPortfolio** é um portfólio desenvolvido com **HTML, CSS e JavaScript**,
 
 O objetivo da atividade é **containerizar um site estático com Docker**, usando o **Nginx** para disponibilizar a página no navegador. O site pode ser acessado localmente após a construção da imagem e a inicialização do container.
 
+### Links de acesso
+
+- **Versão pública (Vercel):** https://devportfolio-sthevan.vercel.app/
+- **Versão local com Docker:** http://localhost:8081 (disponível quando o container estiver em execução no seu computador).
+
+> **Observação:** a publicação na Vercel é independente da execução via Docker. O endereço da Vercel não utiliza a porta local 8081 e não substitui o vídeo de demonstração do container exigido na atividade.
+
 ## 2. Tecnologias utilizadas
 
 - **HTML5:** estrutura e conteúdo da página;
