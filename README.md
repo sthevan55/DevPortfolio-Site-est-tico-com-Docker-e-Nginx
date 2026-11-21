@@ -5,21 +5,21 @@
 **Atividade:** P2 — Containerizando um site estático com Docker  
 **Autor:** Sthevan Vinicius
 
-## Sobre o projeto
+## 1. Sobre o projeto
 
-O **DevPortfolio** é um site de portfólio desenvolvido com HTML, CSS e JavaScript. A página apresenta informações pessoais, tecnologias, projetos e contato, com layout responsivo e elementos interativos.
+O **DevPortfolio** é um portfólio desenvolvido com **HTML, CSS e JavaScript**, com layout responsivo, apresentação de projetos e elementos interativos.
 
-Nesta atividade, o site é disponibilizado por um servidor **Nginx** executado dentro de um **container Docker**. Por ser um site estático, não precisa de backend nem de banco de dados.
+O objetivo da atividade é **containerizar um site estático com Docker**, usando o **Nginx** para disponibilizar a página no navegador. O site pode ser acessado localmente após a construção da imagem e a inicialização do container.
 
-## Tecnologias utilizadas
+## 2. Tecnologias utilizadas
 
-- **HTML5:** estrutura da página;
-- **CSS3:** estilização e responsividade;
-- **JavaScript:** interações e funcionalidades da interface;
-- **Docker:** criação da imagem e execução do container;
-- **Nginx Alpine:** servidor web responsável por disponibilizar os arquivos estáticos.
+- **HTML5:** estrutura e conteúdo da página;
+- **CSS3:** aparência, animações e responsividade;
+- **JavaScript:** interações da interface;
+- **Docker:** empacotamento e execução do site em um container;
+- **Nginx Alpine:** servidor web que entrega os arquivos estáticos ao navegador.
 
-## Estrutura do projeto
+## 3. Estrutura do projeto
 
 ```text
 ├── index.html
@@ -36,52 +36,68 @@ Nesta atividade, o site é disponibilizado por um servidor **Nginx** executado d
         └── favicon.svg
 ```
 
-O `Dockerfile` utiliza a imagem `nginx:alpine` e copia o HTML, o CSS, o JavaScript e as imagens para a pasta `/usr/share/nginx/html/`, utilizada pelo Nginx para servir o site.
+O site utiliza arquivos HTML, CSS, JavaScript e imagens, sem precisar de backend ou banco de dados.
 
-## Como executar com Docker
+## 4. Diferença entre imagem Docker e container
 
-**Pré-requisito:** ter o Docker Desktop ou Docker Engine instalado e em execução.
+**Imagem Docker:** é um modelo pronto, criado a partir de um `Dockerfile`. A imagem contém os arquivos e as configurações necessários para executar uma aplicação. No projeto, a imagem `devportfolio` contém o Nginx e os arquivos do site.
 
-Abra o terminal na pasta do projeto, onde está o `Dockerfile`, e siga os passos:
+**Container Docker:** é uma instância de uma imagem em execução. Ao executar `docker run`, o Docker cria e inicia um container usando a imagem construída. Esse container executa o Nginx, permitindo acessar o site pelo navegador.
 
-### 1. Construir a imagem
+**Exemplo neste projeto:**
+
+- `docker build -t devportfolio .` **constrói a imagem** `devportfolio`;
+- `docker run -d --name devportfolio-container -p 8080:80 devportfolio` **cria e inicia o container** `devportfolio-container`.
+
+**Resumindo:** a **imagem** é o modelo preparado; o **container** é uma instância desse modelo executando. Uma mesma imagem pode dar origem a vários containers.
+
+## 5. Dockerfile e Nginx
+
+O **Dockerfile** define como a imagem é construída. Neste projeto, ele parte da imagem oficial `nginx:alpine`, copia os arquivos do site para a pasta padrão de conteúdo web do Nginx (`/usr/share/nginx/html/`) e documenta a porta interna `80`.
+
+O **Nginx** é o servidor HTTP responsável por entregar os arquivos HTML, CSS, JavaScript e imagens quando o navegador acessa a página.
+
+O mapeamento `-p 8080:80` permite acessar o serviço pela **porta 8080 do computador**, encaminhando as requisições à **porta 80 do container**.
+
+## 6. Como executar com Docker
+
+**Pré-requisito:** Docker Desktop ou Docker Engine instalado e em execução.
+
+No terminal, abra a pasta do projeto (a mesma onde está o `Dockerfile`) e execute:
+
+### Passo 1 — Construir a imagem
 
 ```bash
 docker build -t devportfolio .
 ```
 
-### 2. Iniciar o container
+### Passo 2 — Criar e iniciar o container
 
 ```bash
 docker run -d --name devportfolio-container -p 8080:80 devportfolio
 ```
 
-A porta **8080** do computador será direcionada à porta **80** do Nginx no container.
-
-### 3. Acessar o site
-
-Abra no navegador:
-
-**http://localhost:8080**
-
-Para confirmar que o container está em execução:
+### Passo 3 — Verificar o container
 
 ```bash
 docker ps
 ```
 
-### 4. Parar ou iniciar novamente
+O comando deve listar o `devportfolio-container` caso ele esteja em execução.
 
-Para parar o container:
+### Passo 4 — Acessar o site
+
+Abra **http://localhost:8080** no navegador para visualizar e testar a página.
+
+### Passo 5 — Parar ou iniciar novamente
 
 ```bash
 docker stop devportfolio-container
-```
-
-Para iniciar novamente o mesmo container:
-
-```bash
 docker start devportfolio-container
 ```
 
-Se alterar os arquivos do site, reconstrua a imagem e recrie o container para aplicar as mudanças.
+Se alterar os arquivos do site, é necessário reconstruir a imagem e recriar o container para aplicar as alterações.
+
+## 7. Evidência de funcionamento
+
+A atividade também exige **um vídeo curto mostrando o site funcionando por meio do Docker**. Essa evidência deve demonstrar o container em execução e a página aberta no navegador. O vídeo é um item da entrega, separado da documentação do projeto.
