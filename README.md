@@ -47,7 +47,7 @@ O site utiliza arquivos HTML, CSS, JavaScript e imagens, sem precisar de backend
 **Exemplo neste projeto:**
 
 - `docker build -t devportfolio .` **constrói a imagem** `devportfolio`;
-- `docker run -d --name devportfolio-container -p 8080:80 devportfolio` **cria e inicia o container** `devportfolio-container`.
+- `docker run -d --name devportfolio-container -p 8081:80 devportfolio` **cria e inicia o container** `devportfolio-container`.
 
 **Resumindo:** a **imagem** é o modelo preparado; o **container** é uma instância desse modelo executando. Uma mesma imagem pode dar origem a vários containers.
 
@@ -57,7 +57,7 @@ O **Dockerfile** define como a imagem é construída. Neste projeto, ele parte d
 
 O **Nginx** é o servidor HTTP responsável por entregar os arquivos HTML, CSS, JavaScript e imagens quando o navegador acessa a página.
 
-O mapeamento `-p 8080:80` permite acessar o serviço pela **porta 8080 do computador**, encaminhando as requisições à **porta 80 do container**.
+O mapeamento `-p 8081:80` permite acessar o serviço pela **porta 8081 do computador**, encaminhando as requisições à **porta 80 do container**.
 
 ## 6. Como executar com Docker
 
@@ -74,7 +74,7 @@ docker build -t devportfolio .
 ### Passo 2 — Criar e iniciar o container
 
 ```bash
-docker run -d --name devportfolio-container -p 8080:80 devportfolio
+docker run -d --name devportfolio-container -p 8081:80 devportfolio
 ```
 
 ### Passo 3 — Verificar o container
@@ -87,7 +87,7 @@ O comando deve listar o `devportfolio-container` caso ele esteja em execução.
 
 ### Passo 4 — Acessar o site
 
-Abra **http://localhost:8080** no navegador para visualizar e testar a página.
+Abra **http://localhost:8081** no navegador para visualizar e testar a página.
 
 ### Passo 5 — Parar ou iniciar novamente
 
